@@ -6,5 +6,6 @@ const router = express.Router();
 
 // creando la api, se busca la ruta
 router.post("/registerRole", roleController.registerRole);
+router.get("/listRole", roleController.listRole)
 
 export default router;

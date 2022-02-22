@@ -17,6 +17,16 @@ router.post(
   roleMidd.existingRole,
   userController.registerUser
 );
-router.get("/listUser", userController.listUser)
+
+// cuando se envian datos con json se utiliza un post
+// le pongo parametros para que me traiga conicidencias o todo el dato
+// get obtiene, post hace una petecion, delete elimina -- put edita
+router.get("/listUser/:name?", userController.listUser);
+router.get("/listUserAdmin/:name?", userController.listUser);
+router.post("/login", userController.login);
+router.put("/delete/:_id", userController.deleteUser);
+router.put("/updateUserAdmin", userController.updateUserAdmin);
+
+
 
 export default router;

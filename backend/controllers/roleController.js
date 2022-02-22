@@ -24,5 +24,13 @@ const registerRole = async (req, res) => {
   res.status(200).send({ result });
 };
 
+const listRole = async (req, res) => {
+  let roles = await role.find()
+  if (roles.length === 0)
+    return res.status(400).send({ message: "No search result" });
+
+  return res.status(200).send({ roles});
+};
+
 // exportamos las funcion para que cualquier modulo pueda utlizarlo
-export default { registerRole };
+export default { registerRole, listRole };
