@@ -17,6 +17,8 @@ import roleRoutes from "./routes/roleRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 
 //  Para importar las libreria de variables de entornos el config lo inicializa para poder utlizarla
+// importamos routes task
+import taskRoutes from "./routes/taskRoutes.js";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -28,7 +30,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/role", roleRoutes);
 app.use("/api/user", userRoutes);
-
+app.use("/api/task", taskRoutes);
 // nos muestra en que puerto esta escuchando
 
 app.listen(process.env.PORT, () =>
